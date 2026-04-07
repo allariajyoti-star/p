@@ -542,6 +542,19 @@
     }
     .preview-label.show { opacity: 1; transform: translateY(0); }
 
+    /* Hero Logo */
+    .hero-logo-img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 40px;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .hero-logo-img:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.3));
+    }
+
     @media (max-width: 900px) {
       nav { padding: 20px 24px; }
       .nav-links { gap: 24px; }
@@ -552,6 +565,69 @@
       .about-strip { grid-template-columns: 1fr; padding: 80px 24px; gap: 48px; }
       footer { padding: 32px 24px; flex-direction: column; gap: 16px; text-align: center; }
       .hero-scroll { display: none; }
+      .hero-logo-img { width: 150px; margin-bottom: 30px; }
+      .hero h1 { font-size: clamp(40px, 10vw, 70px); }
+      .hero-sub { font-size: 16px; max-width: 100%; }
+      .hero-cta { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .btn-primary { width: 100%; justify-content: center; }
+      .marquee-item { padding: 0 20px; font-size: 11px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .case-body { padding: 20px 24px 24px; }
+      .case-footer { padding: 12px 24px 16px; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-logo-img { width: 120px; margin-bottom: 25px; }
+      nav { padding: 16px 20px; }
+      .nav-logo { font-size: 16px; }
+      .nav-links { gap: 16px; }
+      .nav-links a { font-size: 12px; }
+      .hero { padding: 80px 20px 50px; }
+      .hero-tag { font-size: 11px; margin-bottom: 20px; }
+      .hero h1 { font-size: clamp(32px, 8vw, 50px); }
+      .hero-sub { font-size: 15px; }
+      .btn-primary { font-size: 13px; padding: 12px 24px; }
+      .btn-ghost { font-size: 12px; }
+      .work-section { padding: 60px 20px; }
+      .section-title { font-size: clamp(24px, 6vw, 36px); }
+      .section-count { font-size: 60px; }
+      .case-card { margin-bottom: 16px; }
+      .case-title { font-size: 18px; }
+      .case-desc { font-size: 13px; }
+      .about-strip { padding: 60px 20px; gap: 32px; }
+      .about-title { font-size: clamp(22px, 5vw, 32px); }
+      .about-text { font-size: 14px; }
+      .skill-item { padding: 20px 24px; }
+      .skill-name { font-size: 14px; }
+      .skill-desc { font-size: 11px; }
+      footer { padding: 24px 20px; }
+      .footer-text { font-size: 11px; }
+      .footer-email { font-size: 13px; }
+      .marquee-item { padding: 0 16px; font-size: 10px; }
+      .tag { font-size: 9px; padding: 3px 8px; }
+      .case-meta { font-size: 10px; }
+      .case-arrow { width: 32px; height: 32px; }
+      .figma-badge { font-size: 9px; padding: 4px 8px; top: 12px; right: 12px; }
+    }
+
+    @media (max-width: 400px) {
+      .hero-logo-img { width: 100px; margin-bottom: 20px; }
+      .nav-logo { font-size: 14px; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 11px; }
+      .hero { padding: 60px 16px 40px; }
+      .hero-tag { font-size: 10px; }
+      .hero h1 { font-size: clamp(28px, 7vw, 40px); }
+      .hero-sub { font-size: 14px; }
+      .btn-primary { font-size: 12px; padding: 10px 20px; }
+      .work-section { padding: 40px 16px; }
+      .section-title { font-size: clamp(20px, 5vw, 28px); }
+      .section-count { font-size: 50px; }
+      .about-strip { padding: 40px 16px; gap: 24px; }
+      .about-title { font-size: clamp(18px, 4vw, 24px); }
+      .about-text { font-size: 13px; }
+      .skill-item { padding: 16px 20px; }
+      footer { padding: 20px 16px; }
     }
   </style>
 </head>
@@ -577,7 +653,7 @@
 
     <div class="hero-tag">creative magic maker · UX/UI Designer</div>
     <div class="hero-logo">
-      <img src="kyoti.png" alt="Jyoti Logo" style="width: 200px; height: auto; margin-bottom: 40px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));">
+      <img src="kyoti.png" alt="Jyoti Logo" class="hero-logo-img">
     </div>
     <h1><span style="color: var(--accent);">J</span>yoti</h1>
     <p class="hero-sub">Turning simple ideas into creative designs with a cup of tea in hand! I'm a friendly and curious designer who believes in the magic of great UX.</p>
