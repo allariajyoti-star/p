@@ -9,14 +9,14 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --card: #3a0909;
-      --border: rgba(255,255,255,0.07);
-      --accent: #2f3a12;
-      --accent2: #7b61ff;
-      --text: #f0f0f0;
-      --muted: #888;
+      --bg: #ff1f7f;
+      --surface: #ff6bb3;
+      --card: #ff99cc;
+      --border: rgba(255,255,255,0.3);
+      --accent: #ffd700;
+      --accent2: #ffed4e;
+      --text: #ffffff;
+      --muted: #fff5f5;
       --font-display: 'Syne', sans-serif;
       --font-body: 'DM Sans', sans-serif;
     }
@@ -24,17 +24,18 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--bg);
+      background: linear-gradient(135deg, #ff1f7f 0%, #ff6bb3 100%);
       color: var(--text);
       font-family: var(--font-body);
       font-weight: 300;
       overflow-x: hidden;
       cursor: none;
+      min-height: 100vh;
     }
 
     /* Custom Cursor */
     .cursor {
-      width: 12px; height: 12px;
+      width: 16px; height: 16px;
       background: var(--accent);
       border-radius: 50%;
       position: fixed;
@@ -43,11 +44,11 @@
       z-index: 9999;
       transform: translate(-50%, -50%);
       transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
-      mix-blend-mode: exclusion;
+      box-shadow: 0 0 20px rgba(255,215,0,0.6);
     }
     .cursor-ring {
-      width: 36px; height: 36px;
-      border: 1.5px solid rgba(200,242,97,0.5);
+      width: 40px; height: 40px;
+      border: 2px solid rgba(255,215,0,0.8);
       border-radius: 50%;
       position: fixed;
       top: 0; left: 0;
@@ -55,9 +56,10 @@
       z-index: 9998;
       transform: translate(-50%, -50%);
       transition: transform 0.18s ease, width 0.3s, height 0.3s;
+      box-shadow: 0 0 15px rgba(255,215,0,0.4);
     }
-    .cursor.hover { width: 20px; height: 20px; }
-    .cursor-ring.hover { width: 56px; height: 56px; border-color: var(--accent); }
+    .cursor.hover { width: 24px; height: 24px; }
+    .cursor-ring.hover { width: 60px; height: 60px; border-color: var(--accent2); }
 
     /* Noise overlay */
     body::before {
@@ -77,7 +79,7 @@
       z-index: 100;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
-      background: rgba(10,10,10,0.7);
+      background: rgba(255,31,127,0.3);
     }
     .nav-logo {
       font-family: var(--font-display);
@@ -119,13 +121,13 @@
     }
     .orb1 {
       width: 500px; height: 500px;
-      background: rgba(123,97,255,0.12);
+      background: rgba(255,215,0,0.15);
       top: -100px; right: -100px;
       animation: orb-float 8s ease-in-out infinite;
     }
     .orb2 {
       width: 300px; height: 300px;
-      background: rgba(200,242,97,0.08);
+      background: rgba(255,255,255,0.1);
       bottom: 100px; left: 200px;
       animation: orb-float 10s ease-in-out infinite reverse;
     }
@@ -192,7 +194,7 @@
     }
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(200,242,97,0.3);
+      box-shadow: 0 12px 40px rgba(255,215,0,0.4);
     }
     .btn-ghost {
       font-size: 13px; color: var(--muted);
@@ -321,7 +323,7 @@
       transition: border-color 0.4s, transform 0.4s;
     }
     .case-card:hover {
-      border-color: rgba(200,242,97,0.25);
+      border-color: rgba(255,215,0,0.4);
       transform: translateY(-4px);
     }
 
@@ -363,10 +365,10 @@
       filter: blur(0);
       transition: filter 0.4s;
     }
-    .tp-1 { background: linear-gradient(135deg, #1a1060 0%, #3d1d8a 50%, #7b61ff 100%); color: rgba(255,255,255,0.12); }
-    .tp-2 { background: linear-gradient(135deg, #0c2010 0%, #153520 50%, #c8f261 80%); color: rgba(255,255,255,0.1); }
-    .tp-3 { background: linear-gradient(135deg, #200c0c 0%, #5a1a1a 50%, #ff6161 80%); color: rgba(255,255,255,0.1); }
-    .tp-4 { background: linear-gradient(135deg, #0c1820 0%, #0f3550 50%, #61c8f2 80%); color: rgba(255,255,255,0.1); }
+    .tp-1 { background: linear-gradient(135deg, #ff6bb3 0%, #ff99cc 50%, #ffd700 100%); color: rgba(255,255,255,0.2); }
+    .tp-2 { background: linear-gradient(135deg, #ff1f7f 0%, #ff6bb3 50%, #ffed4e 80%); color: rgba(255,255,255,0.15); }
+    .tp-3 { background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ff1f7f 80%); color: rgba(255,255,255,0.1); }
+    .tp-4 { background: linear-gradient(135deg, #ffed4e 0%, #ffd700 50%, #ff6bb3 80%); color: rgba(255,255,255,0.12); }
 
     .thumb-icon {
       position: relative; z-index: 1;
@@ -393,7 +395,7 @@
       border: 1px solid var(--border);
       color: var(--muted);
     }
-    .tag-accent { border-color: rgba(200,242,97,0.3); color: var(--accent); }
+    .tag-accent { border-color: rgba(255,215,0,0.5); color: var(--accent); }
 
     .case-title {
       font-family: var(--font-display);
@@ -573,9 +575,12 @@
     <div class="hero-bg-orb orb1"></div>
     <div class="hero-bg-orb orb2"></div>
 
-    <div class="hero-tag">UX/UI Designer · Available for work</div>
-    <h1>Design that<br/><em>moves</em><br/>people.</h1>
-    <p class="hero-sub">I craft digital experiences where clarity meets emotion — interfaces that feel inevitable, not just usable.</p>
+    <div class="hero-tag">creative magic maker · UX/UI Designer</div>
+    <div class="hero-logo">
+      <img src="kyoti.png" alt="Jyoti Logo" style="width: 200px; height: auto; margin-bottom: 40px; filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));">
+    </div>
+    <h1><span style="color: var(--accent);">j</span>yoti</h1>
+    <p class="hero-sub">Turning simple ideas into creative designs with a cup of tea in hand! I'm a friendly and curious designer who believes in the magic of great UX.</p>
     <div class="hero-cta">
       <a href="#work" class="btn-primary">
         View Case Studies
@@ -731,8 +736,8 @@
   <section class="about-strip" id="about">
     <div>
       <div class="about-label">About Me</div>
-      <h2 class="about-title">Hi, I'm Jyoti Allaria. I design with empathy, ship with precision.</h2>
-      <p class="about-text">With 4+ years crafting digital products, I sit at the intersection of research and aesthetics. I believe great design is invisible — it guides without forcing, delights without distracting.<br/><br/>Currently open to full-time roles and select freelance projects.</p>
+      <h2 class="about-title">Hi, I'm Jyoti! Your friendly creative magic maker! 🎨</h2>
+      <p class="about-text">I'm a curious UX/UI designer who turns simple ideas into creative designs! Always powered by tea (it's my creativity spark!), I believe great design should feel like magic - intuitive, delightful, and making people smile.<br/><br/>Let's create something amazing together! Currently open to full-time roles and fun freelance projects.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-item">
