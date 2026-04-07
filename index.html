@@ -303,6 +303,96 @@
       line-height: 1;
     }
 
+    /* Comic Book Elements */
+    .comic-border {
+      border: 3px solid var(--comic-red);
+      border-radius: 8px;
+      position: relative;
+      background: white;
+    }
+    .comic-border::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 2px dashed var(--comic-blue);
+      border-radius: 10px;
+      opacity: 0.6;
+      z-index: -1;
+    }
+    .comic-border::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border: 1px solid var(--comic-yellow);
+      border-radius: 12px;
+      opacity: 0.4;
+      z-index: -2;
+    }
+
+    .speech-bubble {
+      background: white;
+      border: 3px solid var(--comic-red);
+      border-radius: 20px;
+      position: relative;
+      padding: 15px 20px;
+      font-family: var(--font-comic);
+      font-size: 14px;
+      color: #333;
+      transform: rotate(-1deg);
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+    }
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 30px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-right: 3px solid var(--comic-red);
+      border-bottom: 3px solid var(--comic-red);
+      transform: rotate(45deg);
+    }
+
+    .comic-panel {
+      background: white;
+      border: 4px solid black;
+      position: relative;
+      overflow: hidden;
+      transform: rotate(0.5deg);
+      box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+    }
+    .comic-panel::before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 2px dashed var(--comic-blue);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .pow-burst {
+      background: var(--comic-yellow);
+      color: var(--comic-red);
+      font-family: var(--font-comic);
+      font-weight: bold;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: 3px solid var(--comic-red);
+      border-radius: 50%;
+      display: inline-block;
+      transform: rotate(-15deg);
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+      animation: pow-pulse 2s ease-in-out infinite;
+    }
+    @keyframes pow-pulse {
+      0%, 100% { transform: rotate(-15deg) scale(1); }
+      50% { transform: rotate(-15deg) scale(1.1); }
+    }
+
     /* Case Study Grid */
     .case-grid {
       display: grid;
